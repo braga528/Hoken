@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hoken | </title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+
+<div id="sidebar"  class="sideStyle" style="width:200px; height:650px; background: #2cb682; position: absolute; float:left; padding: 40px 20px; "><!-- Contenedor de menú -->
+    <div style="background: #ffffff; width: 100px; height:100px;  position: relative; right: -45px; border-radius:100%;  ">espacio de foto de usuario</div>
+    <div class="indexBoton" style="background: #ffffff; width: 220px; height: 60px; position:relative; top: 35px;">Inicio</div>
+    <div class="mapsBoton" style="background: #ffffff; width: 220px; height: 60px; position:relative; top: 35px;">Mapas</div>
+    <div class="qrBoton" style="background: #ffffff; width: 220px; height: 60px; position:relative; top: 35px;">Código</div>
+</div><!--Final de contenedor de menú -->
+
+<div  id="maps" class="mapStyle" style= "width:660px; height: 360px; position: relative; left: 330px; padding: 40px 0px; "><!-- Contenedor del mapa -->
+  
+      <div id="map"></div>
+
+</div> <!-- Final de contenedor de mapa -->
+
+<div id="info" class="infoStyle" style="width:660px; height:240px; background: #2cb682; position: relative; left: 330px; padding: 10px 0px;"> <!-- Contenedor de información -->
+            <h3>Características del conductor.</h3>
+          <label>Nombre: </label>
+          <label class="driverName">nombre del conductor.</label><br>
+          <label>Carrera: </label><label class="driverCarrer">carrera del conductor.</label><br>
+          <label>Punto de partida: </label><input class="StartPoint" type="address" name="start-point"><br>
+          <label>Punto destino: </label><input class="finishPoint" type="address" name="finish-point"><br>
+          <label>Capacidad de pasajeros: </label><input class="capacityPosition" type="number" name="capacity"><br>
+          <button id="Guardar" type="submit" value="guardar">Guardar</button>
+                <button id="Nuevo" type="reset" value="nuevo">Nuevo</button>
+
+</div> <!-- Final de contenedor de información -->
+
+    <script>
+
+              var map;
+              function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: 20.9681469, lng: -89.62987240000001},
+                  zoom: 12
+                });
+              }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW7jLIOGjbN7K1lle9LrUaPruKD8dv_x0&callback=initMap"
+        async defer></script>
+  </body>
+</html>

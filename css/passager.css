@@ -1,0 +1,192 @@
+* {
+
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url('../images/bg.gif');
+}
+
+div {
+	border:  1px double;
+	color: black;
+	padding: 40px 0px 0px;
+
+
+}
+
+div #sidebar {
+	height: 450px;
+	width: 250px;
+	float: left;
+	position: left;
+	box-shadow: 5px 5px 5px gray;
+	padding: 40px 25px;
+	
+}
+
+.maps-style {
+
+	position: relative;
+	right: -290px;
+	background: white;
+}
+
+.sidebar-style{
+	position: relative;
+	left: 15px;
+	background: white;
+	
+}
+
+div #maps {
+
+	width: 700px;
+	height: 300px;
+	padding: 20px 20px;
+	position: relative;
+	box-shadow: 5px 5px 5px gray;
+}
+
+div #info {
+	width: 700px;
+	height: 300px;
+	padding: 20px 20px;
+	position: relative;
+	box-shadow: 5px 5px 5px gray;
+	background-color: white;
+}
+
+.info-style {
+
+	top: 10px;
+	left: 290px
+
+
+}
+.data-driver-info {
+	padding-top:5px;
+	padding-left: 5px;
+	width: 665px;
+	height: 255px;
+	align-content: left;
+	position: absolute;
+	
+} 
+
+label .data-driver-info {
+	padding: 10 10 0;
+}
+
+h1 {
+	color: blue;
+}
+
+div #usser {
+	position: relative;
+	left: 40px;
+	bottom: 20px;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%
+}
+
+.login-style {
+
+	
+	position: relative;
+	top: 150px;
+	width: 300px;
+	height: 100px;
+	right: -370px;
+
+
+}
+
+.button-style-sidebar{
+	background: #2cb682;
+	color: #ffffff;
+	font-family: Helvetica;
+	font-size: 14px;
+	text-align: center;
+	padding: 15px 10px;
+	
+}
+
+
+
+button {
+
+    background: #2cb682;
+    border: 1px solid #f39c12;
+    color: #fff;
+    border-radius: 3px;
+    padding: 15px 35px;
+    text-transform: uppercase;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    box-shadow: 1px 1px 1px;
+   	}
+
+ input{
+     text-align: justify-all;
+      float: right;
+ }
+
+.StartPoint {
+ 	position: absolute;
+ 	width: 450px;
+ 	left: 130px;
+ }
+
+ .finishPoint {
+ 	position: absolute;
+ 	width: 450px;
+ 	left: 130px;
+ 	
+
+ }
+
+ .driverName{
+ 	position: absolute;
+ 	color: gray;
+ 	left: 70px;
+ }
+
+ .driverCarrer{
+ 	position: absolute;
+ 	color: gray;
+ 	left: 70px;
+ }
+
+ .capacityPosition {
+ 	position: absolute;
+ 	left: 175px;
+ }
+
+ .format-link-password {
+
+ 	font-family: helvetica, arial, serif;
+ 	font-style: italic;
+ 	color: #2cb682;
+ 	float: right;
+ }
+
+ label {
+ 	color: #2cb682;
+ 	text-shadow: 1px 1px 2px black;
+ }
+
+legend {
+
+	color: #2cb682;
+	top: 20px;
+
+}
+
+a {
+	color: #2cb682;
+}

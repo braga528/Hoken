@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Hoken | Conductor</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/passager.css">
+    <script type="text/javascript">
+    	function initialize(){
+    		var latlng = new google.maps.LatLng(-12.110306, -77.014074);
+    		var myOptions = {
+    			zoom: 17,
+    			center: latlng,
+    			mapTypeId: google.maps.mapTypeId.HYBRID
+    		};
+    		var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+    		var myLatLng = new google.maps.LatLng(-12.109983, -77.014847);
+    		var beachMarker = new google.maps.Marker({
+    			map: map
+    		});
+    	}
+    </script>
+    <style> 
+    	html { height: 100% }
+    	body { height: 100%; margin: 0px; padding: 0px }
+    	#map_canvas { height: 100% }
+
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <header>            
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- NAV -->
+                            <li><a href="#HOME">Inicio</a> </li>
+                            <li><a href="#ABOUT">Hoken </a> </li>
+                            <li><a href="#FEATURES">Características</a></li>
+                            <li><a href="#SCREENS">Blog</a> </li>
+                            <li><a href="registro.html">Registro </a> </li>
+                            <li><a href="#CONTACT">Contacto </a> </li>
+                        </ul>
+          </div></header>
+  	<div id="container" class="stile"><!--Container-->
+  		<div id="sidebar" class="sidebar-style"><!--herramientas sidebar-->
+  			<div id="usser" class="usser-photo"></div>
+  			<div id="inicio-slide" class="button-style-sidebar">Inicio</div><br>
+  			<div  class="button-style-sidebar">Mapas</div><br>
+  			<div class="button-style-sidebar">Historial</div><br>
+  			<div class="button-style-sidebar">Codigo</div>
+
+  		</div><!--End herramientas sidebar-->
+  		<div id="maps" class="maps-style">
+  		<div id="map_canvas" ></div>
+  			
+  		</div><!--End container conductor info-->
+  		<div id="info" class="info-style">
+  			<div id="data-driver" class="data-driver-info">
+	  			<h3>Características del conductor.</h3>
+	  			<label>Nombre: </label>
+	  			<label class="driverName">nombre del conductor.</label><br>
+	  			<label>Carrera: </label><label class="driverCarrer">carrera del conductor.</label><br>
+	  			<label>Punto de partida: </label><input class="StartPoint" type="address" name="start-point"><br>
+	  			<label>Punto destino: </label><input class="finishPoint" type="address" name="finish-point"><br>
+	  			<label>Capacidad de pasajeros: </label><input class="capacityPosition" type="number" name="capacity"><br>
+	  			<button id="Guardar" type="submit" value="guardar">Guardar</button>
+                <button id="Nuevo" type="reset" value="nuevo">Nuevo</button> 
+  			</div>
+  		</div><!--end infoview-->
+
+
+  	</div><!--end container -->
+  	<footer> <h1>Hello, world!</h1></footer>
+   
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW7jLIOGjbN7K1lle9LrUaPruKD8dv_x0&callback=initialize"
+            type="text/javascript"></script>
+  </body>
+</html>
