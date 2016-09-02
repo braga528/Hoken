@@ -28,7 +28,7 @@
 			      <ul class="side-nav" id="mobile-demo">
 			        <li><a href="index.html">Inicio</a></li>
 			        <li><a href="https://hoken2016.wordpress.com/2016/08/04/universitarios-vs-transporte/">Blog</a></li>
-			        <li><a href="login.html">Iniciar Sesion</a></li>
+			        <li><a href="logan.html">Iniciar Sesion</a></li>
 			        <li><a href="mobile.html">Contacto</a></li>
 			      </ul>
 			    </div>
@@ -47,64 +47,114 @@
 			</div>
 
 			<div class="row">
-				    <form class="col s12" action="registro.php" method="POST">
+				    <form class="col s12" action="registro2.php" onsubmit="return checkForm(this);" method="POST">
+				    	<input type="hidden" value="0" name="id">
 				      <div class="row">
 				        <div class="input-field col s6">
-				          <input id="name" type="text" class="validate">
+				          <input id="name" name="name" type="text" class="validate">
 				          <label for="name">Nombre</label>
 				        </div>
 				        <div class="input-field col s6">
-				          <input id="lastname" type="text" class="validate">
+				          <input id="lastname" name="lastname" type="text" class="validate">
 				          <label for="lastname">Apellido</label>
 				        </div>
 				      </div>
 				      <div class="row">
+				      <div class="row">
 				        <div class="input-field col s12">
-				          <select>
-				          	<option value="1" selected>Seleccione un punto</option>
-				          	<option value="2">Dos</option>
-				          	<option value="3">Tres</option>
-				          </select>
+				          <input  id="carrer" name="university" type="text" class="validate">
 				          <label>Universidad</label>
 				        </div>
 				      </div>
 				      <div class="row">
 				        <div class="input-field col s12">
-				          <input  id="carrer" type="text" class="validate">
+				          <input  id="carrer" name="carrer" type="text" class="validate">
 				          <label>Carrera</label>
 				        </div>
 				      </div>
 
 				      <div class="row">
 				        <div class="input-field col s12">
-				          <input id="pass" type="password" class="validate">
+				          <input id="pass" name="pass" type="password" class="validate">
 				          <label for="pass">Contraseña</label>
 				        </div>
 				      </div>
 				      <div class="row">
 				        <div class="input-field col s12">
-				          <input id="cpass" type="password" class="validate">
+				          <input id="cpass" name="cpass" type="password" class="validate">
 				          <label for="cpass" >Confirmar Contraseña</label>
 				        </div>
 				      </div>
 				      <div class="row">
 				        <div class="input-field col s12">
-				          <input id="mail" type="email" class="validate">
+				          <input id="mail" name="mail" type="email" class="validate">
 				          <label for="mail">Correo</label>
 				        </div>
+
 				      </div>
-				    </form>
-				    <button class="btn waves-effect waves-light" type="submit" name="action" value="suscribirse">Guardar
+				      	<button class="btn waves-effect waves-light" type="submit" name="action" value="suscribirse">Guardar
 					    <i class="material-icons right">send</i>
 					</button>
-					<button class="btn waves-effect waves-light" type="submit" name="action">Nuevo
-					    
+					<button class="btn waves-effect waves-light" type="clear" name="action">Nuevo
+					  
 					</button>
+				    </form>
+
 			</div>
       </div>
 
 
-        <footer class="page-footer #00796b teal darken-2">
+<script type="text/javascript"> 
+function checkForm(form){
+	if (form.name.value == ""){
+		alert("Ingrese un nombre");
+		form.name.focus();
+		return false;
+	}
+
+	if (form.pass.value != "" && form.pass.value == form.cpass.value) {
+		if (form.pass.value.length < 8) {
+			alert("Error: La Contraseña deberá contener almenos 8 letras");
+			form.pass.focus();
+			return false;
+		}
+
+	if (form.pass.value == form.mail.value) {
+
+		alert("Error: La Contraseñadeberá ser diferente al correo electronico");
+		form.pass.focus();
+		return false;
+		}
+
+	}
+
+	else {
+		alert("Error: Porfavor verifique su Contraseña");
+		form.pass.focus();
+		return false;
+	}
+
+	alert("Contraseña Válida" + form.pass.value);
+	return true;
+
+	
+
+
+
+}
+</script>
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+			$( document ).ready(function(){
+				 $(".button-collapse").sideNav();
+			}) 
+      </script>
+
+              <footer class="page-footer #00796b teal darken-2">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -125,20 +175,10 @@
           <div class="footer-copyright">
             <div class="container">
             © 2016 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">TabSlash</a>
+            <a class="grey-text text-lighten-4 right" href="#!">TabSlash></a>
             </div>
           </div>
         </footer>
-
-
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script>
-			$( document ).ready(function(){
-				 $(".button-collapse").sideNav();
-			}) 
-      </script>
 
     </body>
   </html>

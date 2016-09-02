@@ -1,14 +1,19 @@
-<? php 
-$db_host="localhost";
+<?php 
+$db_host="hoken_mid";
 $db_user="hoken_mid";
 $db_password="confianza#1";
 $db_name="maps";
 $db_table_name="usuarios";
-$db_connection=mysql_connect($db_host, $db_user, $db_password);
+$db_connection=mysql_connect("$db_host","$db_user","$db_password");
+
+
+
 
 if (!$db_connection) {
-	die('La conexión a la base de datos no es correcta');
+	echo "La conexión a la base de datos no es correcta";
 }
+
+
 
 $subs_name = utf8_decode($_POST['name']);
 $subs_last = utf8_decode($_POST['lastname']);
@@ -17,6 +22,8 @@ $subs_carrera = utf8_decode($_POST['carrer']);
 $subs_password = utf8_decode($_POST['pass']);
 $subs_confpass = utf8_decode($_POST['cpass']);
 $subs_correo = utf8_decode($_POST['mail']);
+
+
 
 $resultado=mysql_query("SELECT * FROM" .$db_table_name. "WHERE Email = '" .$subs_correo. "'", $db_connection);
 
@@ -33,7 +40,7 @@ if (!retry_value) {
 	die('Error: ' . mysql_error());
 }
 
-header('Location: logan.html');
+
 }
 
 mysql_close($db_connection);
