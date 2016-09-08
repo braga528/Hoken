@@ -2,7 +2,7 @@
 
 $connect=mysqli_connect("localhost:3306","root","3a8xNbNo7Ij1frLB","maps");
 if ($connect) {
-	echo "conexion exitosa.<br>";
+	
 	$id=$_POST['id'];
 	$name=$_POST['name'];
 	$last=$_POST['lastname'];
@@ -12,7 +12,7 @@ if ($connect) {
 	$cpassword=$_POST['cpass'];
 	$email=$_POST['mail'];
 	$consulta="INSERT INTO usuarios (name, lastname, university, carrer, pass, cpass, mail) VALUES ('$name','$last','$university','$carrer','$npassword','$cpassword','$email')";
-	// echo $consulta;
+	
 	$resultado=mysqli_query($connect, $consulta);
 
 	if ($resultado) {

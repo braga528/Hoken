@@ -21,12 +21,7 @@
     <body>
       <!--Import jQuery before materialize.js-->
 
-<?php 
-$link = mysqli_conect("localhost:3306","root","3a8xNbNo7Ij1frLB");
-mysqli_select_db($link, "maps");
-$result = mysqli_query($link, "SELECT * FROM automovil");
 
-?>
 
             <nav>
               <div class="nav-wrapper #00796b teal darken-2">
@@ -47,6 +42,14 @@ $result = mysqli_query($link, "SELECT * FROM automovil");
               </div>
             </nav>
 
+
+<?php 
+$link = mysqli_connect("localhost:3306","root","3a8xNbNo7Ij1frLB");
+mysqli_select_db($link, "maps");
+echo '<form method="POST" action="delete.php">';
+$result = mysqli_query($link, "SELECT * FROM automovil");
+
+?>
           <div >
 
                   <div class="row">
@@ -69,40 +72,26 @@ $result = mysqli_query($link, "SELECT * FROM automovil");
 
                       </tr>
                     </thead>
-
+                      <?php
+                      while ($extraido = mysqli_fetch_array($result)) {
+                      ?>
                     <tbody>
                       <tr>
-                        <td>Alvin</td>
-                        <td>chevrolet</td>
-                        <td>chevi</td>
-                        <td>IZE-66-16</td>
-                        <td>rojo</td>
-                        <td>IscM165893443</td>
-                        <td>edp557023</td>
-                        <td><a id="addcar" class="btn-floating btn-large waves-effect waves-light #00796b"><i class="material-icons">settings</i></a>
-                        <a id="addcar" class="btn-floating btn-large waves-effect waves-light #00796b"><i class="material-icons">delete</i></a></td>
+                        <td><?=$extraido['conductor']?></td>
+                        <td><?=$extraido['marca']?></td>
+                        <td><?=$extraido['modelo']?></td>
+                        <td><?=$extraido['placas']?></td>
+                        <td><?=$extraido['color']?></td>
+                        <td><?=$extraido['TC']?></td>
+                        <td><?=$extraido['seguro']?></td>
+                        <td><a id="addcar"  class="btn-floating btn-large waves-effect waves-light #00796b" href="config.php?id=<?php echo $extraido['car']?>"><i class="material-icons">settings</i></a>
+                        <a id="addcar" class="btn-floating btn-large waves-effect waves-light #00796b" href="delete.php?id=<?php echo $extraido['car']?>"><i class="material-icons">delete</i></a></td>
                       </tr>
-                      <tr>
-                        <td>Alan</td>
-                        <td>chevrolet</td>
-                        <td>chevi</td>
-                        <td>IZE-66-16</td>
-                        <td>rojo</td>
-                        <td>IscM165893443</td>
-                        <td>edp557023</td>
-                        <td><a id="addcar" class="btn-floating btn-large waves-effect waves-light #00796b"><i class="material-icons">settings</i></a>
-                        <a id="addcar" class="btn-floating btn-large waves-effect waves-light #00796b"><i class="material-icons">delete</i></a></td>
-                      <tr>
-                        <td>Jonathan</td>
-                        <td>chevrolet</td>
-                        <td>chevi</td>
-                        <td>IZE-66-16</td>
-                        <td>rojo</td>
-                        <td>IscM165893443</td>
-                        <td>edp557023</td>
-                        <td><a id="addcar" class="btn-floating btn-large waves-effect waves-light #00796b"><i class="material-icons">settings</i></a>
-                        <a id="addcar" class="btn-floating btn-large waves-effect waves-light #00796b"><i class="material-icons">delete</i></a></td>
-                      </tr>
+                      <?php
+                        }
+                        mysqli_close($link);
+                      ?>
+
                     </tbody>
                   </table>
                     </div>
